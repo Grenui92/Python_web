@@ -1,9 +1,10 @@
 from book import Book
 from contact_classes.fields import Phone, Email, Address, Birthday
 from contact_classes.record import Record
+from abstract_class import WorkMethods, InformationOutput
 
 
-class WorkContact:
+class WorkContact(WorkMethods, InformationOutput):
 
     def __init__(self, path):
 
@@ -76,7 +77,7 @@ class WorkContact:
         else:
             return f"Contact {name} is not in book"
 
-    def add_values(self, name: str, args: list):
+    def add_value(self, name: str, args: list):
         """Додає інформацію до конкретного контактну у вказане поле"""
         try:
             field = args[0]
