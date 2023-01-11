@@ -67,7 +67,7 @@ class WorkContact(WorkMethods, InformationOutput):
         else:
             return 'Not deleted'
 
-    def delete_one(self, name: str, *_):
+    def delete_one(self, name: str, *_) -> str:
         """Видаляє один конкретний контакт з книги"""
         if not name:
             raise ValueError("You can't delete empty contact.")
