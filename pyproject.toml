@@ -1,19 +1,17 @@
-[tool.poetry]
-name = "python-web"
-version = "0.1.0"
-description = ""
-authors = ["Grenui92 <grenui92@gmail.com>"]
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "help-you"
+version = "0.1"
+authors = [{ name = "Станіслав Василенко" }]
+description = "Small program"
 readme = "README.md"
-packages = [{include = "python_web"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 prompt-toolkit = "^3.0.36"
 
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
 [project.scripts]
-help_you = "main:start"
+help_you = "help_you.main:start"

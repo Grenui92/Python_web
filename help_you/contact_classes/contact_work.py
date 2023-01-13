@@ -1,7 +1,7 @@
-from book import Book
-from contact_classes.fields import Phone, Email, Address, Birthday
-from contact_classes.record import Record
-from abstract_class import WorkMethods, InformationOutput
+from help_you.book import Book
+from help_you.contact_classes.fields import Phone, Email, Address, Birthday
+from help_you.contact_classes.record import Record
+from help_you.abstract_class import WorkMethods, InformationOutput
 
 
 class WorkContact(WorkMethods, InformationOutput):

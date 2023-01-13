@@ -5,17 +5,17 @@ from sys import platform
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import NestedCompleter
 
-from contact_classes.contact_work import WorkContact
-from file_sorter import sort_targets
-from instructions import show_instructions
-from note_classes.note_work import WorkNote
-from bug_catcher import erorr_catcher
+from help_you.contact_classes.contact_work import WorkContact
+from help_you.file_sorter import sort_targets
+from help_you.instructions import show_instructions
+from help_you.note_classes.note_work import WorkNote
+from help_you.bug_catcher import erorr_catcher
 
 
 class UserInterface:
 
     def __init__(self):
-        self.absolute_path = self.create_path_for_saves()
+        self.absolute_path = "." # self.create_path_for_saves()
         self.book = WorkContact(f"{self.absolute_path}/contacts.bin")
         self.notes = WorkNote(f"{self.absolute_path}/notes.bin")
         self.commands = {"help": self.help_me,
