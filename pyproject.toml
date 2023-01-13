@@ -1,3 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "help-you"
+version = "0.1"
+authors = [{ name = "Станіслав Василенко" }]
+description = "Small program"
+readme = "README.md"
+
 [tool.poetry]
 name = "python-web"
 version = "0.1.0"
@@ -10,10 +21,5 @@ packages = [{include = "python_web"}]
 python = "^3.10"
 prompt-toolkit = "^3.0.36"
 
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
 [project.scripts]
-help_you = "main:start"
+help_you = "help_you.main:start"

@@ -1,6 +1,6 @@
-from book import Book
-from note_classes.note import Note
-from abstract_class import WorkMethods, InformationOutput
+from help_you.book import Book
+from help_you.note_classes.note import Note
+from help_you.abstract_class import WorkMethods, InformationOutput
 
 
 class WorkNote(WorkMethods, InformationOutput):
