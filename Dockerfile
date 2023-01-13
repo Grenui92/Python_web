@@ -1,6 +1,7 @@
 FROM python:3.10
-VOLUME /help_you
-COPY . .
+VOLUME /helper
+COPY . /helper
 WORKDIR .
-RUN pip install poetry
-RUN potery install
+RUN pip install helper/.
+RUN pip install -r helper/requirments.txt
+CMD ["bash"]

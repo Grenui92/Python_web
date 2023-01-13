@@ -9,14 +9,6 @@ authors = [{ name = "Станіслав Василенко" }]
 description = "Small program"
 readme = "README.md"
 
-[tool.poetry]
-name = "python-web"
-version = "0.1.0"
-description = ""
-authors = ["Grenui92 <grenui92@gmail.com>"]
-readme = "README.md"
-packages = [{include = "python_web"}]
-
 [tool.poetry.dependencies]
 python = "^3.10"
 prompt-toolkit = "^3.0.36"

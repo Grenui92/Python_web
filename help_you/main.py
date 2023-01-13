@@ -15,7 +15,7 @@ from help_you.bug_catcher import erorr_catcher
 class UserInterface:
 
     def __init__(self):
-        self.absolute_path = self.create_path_for_saves()
+        self.absolute_path = "." # self.create_path_for_saves()
         self.book = WorkContact(f"{self.absolute_path}/contacts.bin")
         self.notes = WorkNote(f"{self.absolute_path}/notes.bin")
         self.commands = {"help": self.help_me,
