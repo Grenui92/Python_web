@@ -7,7 +7,7 @@ from prompt_toolkit.completion import NestedCompleter
 
 
 from help_you.contact_classes.contact_work import WorkContact
-from help_you.file_sorter import sort_targets
+from help_you.file_sorter import FileSorter
 from help_you.instructions import show_instructions
 from help_you.note_classes.note_work import WorkNote
 from help_you.bug_catcher import erorr_catcher
@@ -133,13 +133,9 @@ class UserInterface:
 
     @staticmethod
     @erorr_catcher
-    def file_sorter(path_for_sorting: str, path_for_sorting_2: list):
-        if path_for_sorting_2:
-            sort_targets([path_for_sorting, *path_for_sorting_2])
-            return f"Folders {path_for_sorting} and {','.join(path_for_sorting_2)} successfully sorted."
-        else:
-            sort_targets(path_for_sorting)
-            return f"Folder {path_for_sorting} successfully sorted."
+    def file_sorter(user_path: str):
+        sorter = FileSorter(user_path)
+        sorter.job()
 
     @staticmethod
     @erorr_catcher
