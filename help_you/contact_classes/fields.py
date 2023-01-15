@@ -22,7 +22,7 @@ class Name(Field):
 
 class Phone(Field):
     @staticmethod
-    def normalize_phone(value):
+    def normalize_phone(value: str) -> str:
         phone = search(r'(^\+\d{12}$)|(^0\d{9}$)', value)
         if phone:
             if len(phone.string) == 13:
@@ -40,7 +40,7 @@ class Phone(Field):
 class Email(Field):
 
     @staticmethod
-    def verify_email(value):
+    def verify_email(value: str) -> str:
         """Верифікація введеного e-mail користувача"""
 
         email = search(r"^[a-z0-9._-]{2,64}@\w{2,}[.]\w{2,3}$", value, flags=IGNORECASE)
@@ -77,7 +77,7 @@ class Birthday(Field):
 
 class Address(Field):
     @staticmethod
-    def verify_address(value):
+    def verify_address(value: str) -> str:
         """Верифікація введеної адреси. Повинна складатися мінімум з 2 символів """
         address = search(r'^[a-zA-Z0-9,-/ ]+$', value)
         if address:

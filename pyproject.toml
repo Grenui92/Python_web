@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "help-you"
+version = "0.1"
+authors = [{ name = "Станіслав Василенко" }]
+description = "Small program"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+prompt-toolkit = "^3.0.36"
+
+[project.scripts]
+help_you = "help_you.main:start"

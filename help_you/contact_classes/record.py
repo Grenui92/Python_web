@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from contact_classes.fields import Name, Phone, Email, Address, Birthday
+from help_you.contact_classes.fields import Name, Phone, Email, Address, Birthday
 
 
 class Record:
@@ -18,7 +18,7 @@ class Record:
                f"\taddress: {self.addresses.value if isinstance(self.addresses, Address) else self.addresses}\n" \
                f"\tbirthday: {self.birthday.value if isinstance(self.birthday, Birthday) else self.birthday}"
 
-    def add_phone(self, new_phone: str):
+    def add_phone(self, new_phone: str) -> str:
         """Додавання номеру телефону. Проходить перевірку дублікатів при наявності інших номерів """
 
         new_phone = Phone(new_phone)
@@ -31,14 +31,14 @@ class Record:
         self.phones.append(new_phone)
         return f"Phone {new_phone.value} successfully added to contact {self.name.value}"
 
-    def set_birthday(self, birthday: str):
+    def set_birthday(self, new_birthday: str) -> str:
         """Встановлення дати народження """
         if isinstance(self.birthday, Birthday):
             return f"The date of birthday already exist in contact '{self.name.value}'"
-        self.birthday = Birthday(birthday)
+        self.birthday = Birthday(new_birthday)
         return f"Date of birthday is added to the contact '{self.name.value}'"
 
-    def add_email(self, new_email: str):
+    def add_email(self, new_email: str) -> str:
         """Додавання електронної пошти контакту. Проходить перевірку дублікатів при наявності інших e-mail """
 
         new_email = Email(new_email)
@@ -52,7 +52,7 @@ class Record:
         self.emails.append(new_email)
         return f"E-mail '{new_email.value}' is added"
 
-    def set_address(self, new_address: str):
+    def set_address(self, new_address: str) -> str:
         """Додавання адреси контакту. Проходить перевірку дублікатів при наявності інших адрес """
         if isinstance(self.addresses, Address):
             return "Address already exist."
@@ -70,7 +70,7 @@ class Record:
         else:
             return "Birthday not set"
 
-    def edit_information_contact(self, command, field, val):
+    def edit_information_contact(self, command: str, field: str, val: list) -> str:
         """"Редагування(заміна ти видалення) полів контакту"""
         old = val[0]
         if field not in self.__dict__:

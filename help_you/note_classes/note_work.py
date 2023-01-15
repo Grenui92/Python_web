@@ -1,8 +1,9 @@
-from book import Book
-from note_classes.note import Note
+from help_you.book import Book
+from help_you.note_classes.note import Note
+from help_you.abstract_class import WorkMethods, InformationOutput
 
 
-class WorkNote:
+class WorkNote(WorkMethods, InformationOutput):
 
     def __init__(self, path):
         self.note_book = Book(path)
@@ -126,7 +127,7 @@ class WorkNote:
                                    f'{str(note)}') if matched_tags else None
         return sorted(matched_records, reverse=True) if matched_records else "Matches not found"
 
-    def add_values(self, name: str, info: list):
+    def add_value(self, name: str, info: list):
         """Додає інформацію в нотатку"""
         note: Note = self.note_book[name]
         note.add_to_note(info)
