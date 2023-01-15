@@ -4,12 +4,12 @@ from os import cpu_count
 from multiprocessing import Pool
 
 
-# def factorize(*number):
+# def factorize(*number_list):
 #     result = []
-#     for integer in number:
+#     for numbers in number_list:
 #         one_result = []
-#         for num in range(1, integer + 1):
-#             if integer % num == 0:
+#         for num in range(1, numbers + 1):
+#             if numbers % num == 0:
 #                 one_result.append(num)
 #         result.append(one_result)
 #     return result
