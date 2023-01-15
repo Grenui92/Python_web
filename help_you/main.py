@@ -6,7 +6,7 @@ from prompt_toolkit import prompt
 from prompt_toolkit.completion import NestedCompleter
 
 from contact_classes.contact_work import WorkContact
-from file_sorter import sort_targets
+from file_sorter import FileSorter
 from instructions import show_instructions
 from note_classes.note_work import WorkNote
 from bug_catcher import erorr_catcher
@@ -96,13 +96,10 @@ def good_bye(*_):
 
 
 @erorr_catcher
-def file_sorter(path_for_sorting: str, path_for_sorting_2: list):
-    if path_for_sorting_2:
-        sort_targets([path_for_sorting, *path_for_sorting_2])
-        return f"Folders {path_for_sorting} and {','.join(path_for_sorting_2)} successfully sorted."
-    else:
-        sort_targets(path_for_sorting)
-        return f"Folder {path_for_sorting} successfully sorted."
+def file_sorter(*_):
+    path = input("Enter path: ")
+    sorter = FileSorter(path)
+    sorter.job()
 
 
 @erorr_catcher
