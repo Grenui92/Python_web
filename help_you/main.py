@@ -5,6 +5,7 @@ from sys import platform
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import NestedCompleter
 
+
 from help_you.contact_classes.contact_work import WorkContact
 from help_you.file_sorter import sort_targets
 from help_you.instructions import show_instructions
